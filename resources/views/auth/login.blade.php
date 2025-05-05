@@ -17,10 +17,19 @@
         <div class="text-login">
           Use as suas credenciais para realizar o Login.
         </div>
-        <form>
+        <form method="POST" action="{{route('login_action')}}">
+            @if (isset($message_erro))
+            <p>{{ $message_erro }}</p>
+        @endif
+            @csrf
           <div class="email-area">
             <div class="email-label">E-mail</div>
-            <input type="email" placeholder="Digite o seu e-mail" />
+            <input type="email" name="email" placeholder="Digite o seu e-mail" />
+            @error('email')
+            <div class="error">
+               {{ $message }}
+          </div>
+          @enderror
           </div>
           <div class="password-area">
             <div class="password-label">
@@ -28,8 +37,13 @@
               <a href="" class="password-area-forgot">Esqueceu sua senha?</a>
             </div>
             <div class="password-input-area">
-              <input type="password" placeholder="Digite a sua senha" />
+              <input type="password" name="password" placeholder="Digite a sua senha" />
               <img src="assets/icons/eyeIcon.png" alt="Ícone mostrar senha" />
+              @error('password')
+              <div class="error">
+                 {{ $message }}
+            </div>
+            @enderror
             </div>
 
 

@@ -33,8 +33,8 @@
             @endif --}}
           <div class="name-area">
             <div class="name-label">Nome</div>
-            <input type="text" name="nome" value="{{ @old('nome') }}" placeholder="Digite o seu nome" /><br>
-            @error('nome')
+            <input type="text" name="name" value="{{ @old('name') }}" placeholder="Digite o seu nome" /><br>
+            @error('name')
             <div class="error">
                  {{ $message }}
             </div>
@@ -53,9 +53,9 @@
           <div class="password-area">
             <div class="password-label">Senha</div>
             <div class="password-input-area">
-              <input type="password" name="senha" placeholder="Digite a sua senha"  />
-              @error('senha')
-                <div class="senha">
+              <input type="password" name="password" placeholder="Digite a sua senha"  />
+              @error('password')
+                <div class="error">
                    {{ $message }}
               </div>
               @enderror
@@ -66,7 +66,7 @@
           <div class="password-area">
             <div class="password-label">Senha</div>
             <div class="password-input-area">
-              <input type="password" name="senha_confirmation" placeholder="Digite a sua senha" />
+              <input type="password" name="password_confirmation" placeholder="Digite a sua senha" />
 
               <img src="assets/icons/eyeIcon.png" alt="Ícone mostrar senha" />
             </div>
