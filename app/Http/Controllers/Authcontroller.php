@@ -50,7 +50,7 @@ class Authcontroller extends Controller
 
         $login_form = $request->only(['email','password']);
         if(Auth::attempt($login_form)){
-            $user = Auth::user();
+           // $user = Auth::user();
             $data['message_erro'] ='';
             return redirect()->route('home');
            // dd($user);
@@ -58,6 +58,11 @@ class Authcontroller extends Controller
           $data['message_erro'] ='usuario nao existe';
           return view('auth.login',$data);
         }
+    }
+
+    public function logout(){
+         Auth::logout();
+         return redirect()->route('login');
     }
 
 }

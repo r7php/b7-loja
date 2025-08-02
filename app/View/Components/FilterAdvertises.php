@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Advertise;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -16,30 +17,7 @@ class FilterAdvertises extends Component
     public function __construct()
     {
         //
-        $this->advertiseList = [
-            [
-                'image'=>'http://placehold.it/150x150',
-                'title'=>'tenis',
-                'price'=>"5.00",
-                'href'=>"#"
-            ],
-
-
-            [
-                'image'=>'http://placehold.it/150x150',
-                'title'=>'tenis 2',
-                'price'=>"1.00",
-                'href'=>"#"
-            ],
-
-
-            [
-                'image'=>'http://placehold.it/150x150',
-                'title'=>'tenis 3',
-                'price'=>"3.00",
-                'href'=>"#"
-            ],
-        ];
+        $this->advertiseList = Advertise::all();
     }
 
     /**

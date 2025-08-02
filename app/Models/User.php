@@ -4,6 +4,8 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -21,6 +23,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'state_id'
     ];
 
     /**
@@ -45,4 +48,14 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function advertises() : HasMany {
+        return $this->hasMany(Advertise::class);
+    }
+    //BelongsTo = para um
+    //hasmany = para muitos
+    public function state() : BelongsTo {//pertence a um estado
+        return $this->belongsTo(State::class);
+    }
+
 }

@@ -7,6 +7,9 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Open+Sans:ital@0;1&family=Oswald:wght@400;700&display=swap"
       rel="stylesheet"
     />
+        <link rel="stylesheet" href="assets/myAccountStyle.css" />
+    <link rel="stylesheet" href="assets/myAdsStyle.css" />
+
     <link rel="stylesheet" href="assets/style.css" />
     <title>B7Store</title>
   </head>
@@ -14,7 +17,7 @@
   <body>
    <x-base.header/>
     <main>
-        <x-hero/>
+         <x-hero/>
 
         <x-filter-advertises/>
     </main>
